@@ -32,14 +32,12 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
-import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.MappedTypes;
 
 /**
  * Map Java 8 LocalDateTime &lt;-&gt; java.sql.Timestamp
  */
 @MappedTypes(LocalDateTime.class)
-@MappedJdbcTypes({JdbcType.DATE, JdbcType.TIMESTAMP})
 public class LocalDateTimeHandler extends BaseTypeHandler<LocalDateTime> {
 
     @Override

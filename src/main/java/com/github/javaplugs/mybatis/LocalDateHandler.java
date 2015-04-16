@@ -31,14 +31,12 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
-import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.MappedTypes;
 
 /**
  * Map Java 8 LocalDate &lt;-&gt; java.sql.Date
  */
 @MappedTypes(LocalDate.class)
-@MappedJdbcTypes({JdbcType.DATE})
 public class LocalDateHandler extends BaseTypeHandler<LocalDate> {
 
     @Override

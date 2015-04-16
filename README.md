@@ -57,3 +57,11 @@ Or you can use package search
   <package name="com.github.javaplugs.mybatis"/>
 </typeHandlers>
 ```
+
+## Mybatis via Spring
+```
+<bean id="SomeId" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <!-- your configuration -->
+    <property name="typeHandlersPackage" value="com.github.javaplugs.mybatis" />
+</bean>
+```

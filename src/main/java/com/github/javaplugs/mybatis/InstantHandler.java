@@ -31,14 +31,12 @@ import java.sql.Timestamp;
 import java.time.Instant;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
-import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.MappedTypes;
 
 /**
  * Map Java 8 Instant &lt;-&gt; java.sql.Timestamp
  */
 @MappedTypes(Instant.class)
-@MappedJdbcTypes({JdbcType.TIMESTAMP})
 public class InstantHandler extends BaseTypeHandler<Instant> {
 
     @Override
