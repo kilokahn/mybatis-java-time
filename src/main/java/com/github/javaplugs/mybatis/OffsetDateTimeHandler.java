@@ -34,12 +34,14 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
+import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.MappedTypes;
 
 /**
  * Map Java 8 Instant &lt;-&gt; java.sql.Timestamp with timezone.
  */
 @MappedTypes(OffsetDateTime.class)
+@MappedJdbcTypes({JdbcType.DATE, JdbcType.TIMESTAMP})
 public class OffsetDateTimeHandler extends BaseTypeHandler<OffsetDateTime> {
 
     @Override

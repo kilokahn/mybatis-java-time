@@ -34,12 +34,14 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
+import org.apache.ibatis.type.MappedJdbcTypes;
 import org.apache.ibatis.type.MappedTypes;
 
 /**
  * Map Java 8 Instant &lt;-&gt; java.sql.Timestamp with timezone.
  */
 @MappedTypes(ZonedDateTime.class)
+@MappedJdbcTypes({JdbcType.DATE, JdbcType.TIMESTAMP})
 public class ZonedDateTimeHandler extends BaseTypeHandler<ZonedDateTime> {
 
     @Override
