@@ -1,14 +1,17 @@
-# Java 8 time (JSR 310) support for Mybatis 3.x
+# Java 8 time (JSR 310) support for Mybatis
 
-This artefact provides next java.time.\* types handlers:
-- java.time.Instant via java.sql.Timestamp
-- java.time.LocalDate via java.sql.Date
-- java.time.LocalDateTime via java.sql.Timestamp
-- java.time.LocalTime via java.sql.Time
-- java.time.OffsetDateTime via java.sql.Timestamp
-- java.time.ZonedDateTime via java.sql.Timestamp
+This artefact provides mybatis handlers for core java.time.\* types:
+- java.time.Instant (via java.sql.Timestamp)
+- java.time.LocalDate (via java.sql.Date)
+- java.time.LocalDateTime (via java.sql.Timestamp)
+- java.time.LocalTime (via java.sql.Time)
+- java.time.OffsetDateTime (via java.sql.Timestamp)
+- java.time.ZonedDateTime (via java.sql.Timestamp)
 
-## Dependencies 
+## Adding to your project
+
+For now this package is available only via https://jitpack.io/
+
 ### Gradle dependencies
 ```
 repositories {
@@ -36,7 +39,9 @@ dependencies {
 </dependency>
 ```
 
-## Mybatis configuration
+## Configure
+
+### Mybatis config
 ```
 <!-- mybatis-config.xml -->
 <typeHandlers>
@@ -58,7 +63,7 @@ Or you can use package search
 </typeHandlers>
 ```
 
-## Mybatis via Spring
+### Mybatis via Spring
 ```
 <bean id="SomeId" class="org.mybatis.spring.SqlSessionFactoryBean">
     <!-- your configuration -->
