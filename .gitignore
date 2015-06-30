@@ -1,6 +1,6 @@
 
 #Build
-/.nb-gradle/private/
+.nb-gradle
 .nb-gradle-properties
 .gradle
 /build/
