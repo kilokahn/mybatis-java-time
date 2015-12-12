@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE. 
  */
-package com.github.javaplugs.mybatis;
+package org.apache.mybatis.custom.typehandlers;
 
 import java.sql.CallableStatement;
 import java.sql.Time;

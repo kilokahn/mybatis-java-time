@@ -45,12 +45,12 @@ dependencies {
 ```
 <!-- mybatis-config.xml -->
 <typeHandlers>
-  <typeHandler handler="com.github.javaplugs.mybatis.InstantHandler"/>
-  <typeHandler handler="com.github.javaplugs.mybatis.LocalDateHandler"/>
-  <typeHandler handler="com.github.javaplugs.mybatis.LocalDateTimeHandler"/>
-  <typeHandler handler="com.github.javaplugs.mybatis.LocalTimeHandler"/>
-  <typeHandler handler="com.github.javaplugs.mybatis.OffsetDateTimeHandler"/>
-  <typeHandler handler="com.github.javaplugs.mybatis.ZonedDateTimeHandler"/>
+  <typeHandler handler="org.apache.mybatis.custom.typehandlers.InstantHandler"/>
+  <typeHandler handler="org.apache.mybatis.custom.typehandlers.LocalDateHandler"/>
+  <typeHandler handler="org.apache.mybatis.custom.typehandlers.LocalDateTimeHandler"/>
+  <typeHandler handler="org.apache.mybatis.custom.typehandlers.LocalTimeHandler"/>
+  <typeHandler handler="org.apache.mybatis.custom.typehandlers.OffsetDateTimeHandler"/>
+  <typeHandler handler="org.apache.mybatis.custom.typehandlers.ZonedDateTimeHandler"/>
 </typeHandlers>
 ```
 
@@ -59,7 +59,7 @@ Or you can use package search
 ```
 <!-- mybatis-config.xml -->
 <typeHandlers>
-  <package name="com.github.javaplugs.mybatis"/>
+  <package name="org.apache.mybatis.custom.typehandlers"/>
 </typeHandlers>
 ```
 
@@ -67,6 +67,6 @@ Or you can use package search
 ```
 <bean id="SomeId" class="org.mybatis.spring.SqlSessionFactoryBean">
     <!-- your configuration -->
-    <property name="typeHandlersPackage" value="com.github.javaplugs.mybatis" />
+    <property name="typeHandlersPackage" value="org.apache.mybatis.custom.typehandlers" />
 </bean>
 ```

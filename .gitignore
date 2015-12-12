@@ -4,3 +4,4 @@
 .nb-gradle-properties
 .gradle
 /build/
+/bin/
