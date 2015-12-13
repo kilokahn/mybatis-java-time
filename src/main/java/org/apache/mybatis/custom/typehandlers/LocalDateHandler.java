@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE. 
  */
+
 package org.apache.mybatis.custom.typehandlers;
 
 import java.sql.CallableStatement;
@@ -47,7 +48,8 @@ public class LocalDateHandler extends BaseTypeHandler<LocalDate> {
      *            intentionally unused
      */
     @Override
-    public void setNonNullParameter(PreparedStatement ps, int i, LocalDate parameter, JdbcType jdbcType) throws SQLException {
+    public void setNonNullParameter(PreparedStatement ps, int i, LocalDate parameter, JdbcType jdbcType)
+            throws SQLException {
         if (parameter == null) {
             ps.setDate(i, null);
         } else {

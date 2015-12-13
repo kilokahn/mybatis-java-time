@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE. 
  */
+
 package org.apache.mybatis.custom.typehandlers;
 
 import java.sql.CallableStatement;
@@ -50,15 +51,13 @@ public class OffsetDateTimeHandler extends BaseTypeHandler<OffsetDateTime> {
      *            intentionally unused
      */
     @Override
-    public void setNonNullParameter(PreparedStatement ps, int i, OffsetDateTime parameter, JdbcType jdbcType) throws SQLException {
+    public void setNonNullParameter(PreparedStatement ps, int i, OffsetDateTime parameter, JdbcType jdbcType)
+            throws SQLException {
         if (parameter == null) {
             ps.setTimestamp(i, null);
         } else {
-            ps.setTimestamp(
-                i,
-                Timestamp.from(parameter.toInstant()),
-                GregorianCalendar.from(parameter.toZonedDateTime())
-            );
+            ps.setTimestamp(i, Timestamp.from(parameter.toInstant()),
+                    GregorianCalendar.from(parameter.toZonedDateTime()));
         }
     }
 
