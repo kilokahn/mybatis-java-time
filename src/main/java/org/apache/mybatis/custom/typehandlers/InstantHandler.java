@@ -29,6 +29,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.Instant;
+
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;
@@ -39,6 +40,12 @@ import org.apache.ibatis.type.MappedTypes;
 @MappedTypes(Instant.class)
 public class InstantHandler extends BaseTypeHandler<Instant> {
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @param jdbcType
+     *            intentionally unused
+     */
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, Instant parameter, JdbcType jdbcType) throws SQLException {
         if (parameter == null) {

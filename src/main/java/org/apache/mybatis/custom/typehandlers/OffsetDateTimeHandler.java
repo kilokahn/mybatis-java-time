@@ -32,6 +32,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;
@@ -42,6 +43,12 @@ import org.apache.ibatis.type.MappedTypes;
 @MappedTypes(OffsetDateTime.class)
 public class OffsetDateTimeHandler extends BaseTypeHandler<OffsetDateTime> {
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @param jdbcType
+     *            intentionally unused
+     */
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, OffsetDateTime parameter, JdbcType jdbcType) throws SQLException {
         if (parameter == null) {

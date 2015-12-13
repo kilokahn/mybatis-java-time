@@ -29,6 +29,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;
@@ -39,6 +40,12 @@ import org.apache.ibatis.type.MappedTypes;
 @MappedTypes(LocalDate.class)
 public class LocalDateHandler extends BaseTypeHandler<LocalDate> {
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @param jdbcType
+     *            intentionally unused
+     */
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, LocalDate parameter, JdbcType jdbcType) throws SQLException {
         if (parameter == null) {

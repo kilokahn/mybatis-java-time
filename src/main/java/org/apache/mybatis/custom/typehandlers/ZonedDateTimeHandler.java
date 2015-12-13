@@ -28,10 +28,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.time.ZonedDateTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;
@@ -42,6 +43,12 @@ import org.apache.ibatis.type.MappedTypes;
 @MappedTypes(ZonedDateTime.class)
 public class ZonedDateTimeHandler extends BaseTypeHandler<ZonedDateTime> {
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @param jdbcType
+     *            intentionally unused
+     */
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, ZonedDateTime parameter, JdbcType jdbcType) throws SQLException {
         if (parameter == null) {

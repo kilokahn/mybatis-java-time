@@ -24,14 +24,15 @@
 package org.apache.mybatis.custom.typehandlers;
 
 import java.sql.CallableStatement;
-import java.sql.Timestamp;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.GregorianCalendar;
+
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;
@@ -42,6 +43,12 @@ import org.apache.ibatis.type.MappedTypes;
 @MappedTypes(LocalDateTime.class)
 public class LocalDateTimeHandler extends BaseTypeHandler<LocalDateTime> {
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @param jdbcType
+     *            intentionally unused
+     */
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, LocalDateTime parameter, JdbcType jdbcType) throws SQLException {
         if (parameter == null) {

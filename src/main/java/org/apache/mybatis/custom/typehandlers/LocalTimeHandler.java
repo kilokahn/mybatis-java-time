@@ -24,11 +24,12 @@
 package org.apache.mybatis.custom.typehandlers;
 
 import java.sql.CallableStatement;
-import java.sql.Time;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.time.LocalTime;
+
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;
@@ -39,6 +40,12 @@ import org.apache.ibatis.type.MappedTypes;
 @MappedTypes(LocalTime.class)
 public class LocalTimeHandler extends BaseTypeHandler<LocalTime> {
 
+    /**
+     * {@inheritDoc}
+     * 
+     * @param jdbcType
+     *            intentionally unused
+     */
     @Override
     public void setNonNullParameter(PreparedStatement ps, int i, LocalTime parameter, JdbcType jdbcType) throws SQLException {
         if (parameter == null) {
