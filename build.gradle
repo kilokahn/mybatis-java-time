@@ -22,9 +22,16 @@ publishing {
     publications {
         mavenJar(MavenPublication) {
             from components.java
+            
+            artifact sourceJar {
+                classifier "sources"
+            }
         }
     }
 }
 
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
 // Tasks
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
